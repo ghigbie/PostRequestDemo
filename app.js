@@ -6,17 +6,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+var friends = ["Tony", "Clayton", "Jason", "Ben", "Perrin", "Olivia"];
+
 app.get("/", function(req, res){
     res.render("home");
 });
 
 app.post("/addfriend", function(req, res){
-    console.log(req.body);
+    console.log(req.body.newfriend);
+    var newFriend = req.body.newfriend;
+    friends.push(newFriend);
     res.send("YOU HAVE REACHED THE POST ROUTE");
 });
 
 app.get("/friends", function(req, res){
-    var friends = ["Tony", "Clayton", "Jason", "Ben", "Perrin", "Olivia"];
     res.render("friends", {friends: friends});
 });
 
