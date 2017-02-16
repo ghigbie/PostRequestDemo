@@ -8,6 +8,15 @@ app.get("/", function(req, res){
     res.render("home");
 });
 
+app.post("/addfriend", function(req, res){
+    res.send("YOU HAVE REACHED THE POST ROUTE");
+});
+
+app.get("/friends", function(req, res){
+    var friends = ["Tony", "Clayton", "Jason", "Ben", "Perrin", "Olivia"];
+    res.render("friends", {friends: friends});
+});
+
 app.get("*", function(req, res){
     res.render("pageNotFound");
 });
