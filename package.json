@@ -1,0 +1,11 @@
+{
+  "name": "post-request-demo",
+  "version": "1.0.0",
+  "description": "working with post request",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "George Higbie",
+  "license": "ISC"
+}
